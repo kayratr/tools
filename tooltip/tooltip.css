@@ -1,0 +1,26 @@
+body {font:11px/1.5 Verdana, Arial, Helvetica, sans-serif; background:#FFF}
+#text {margin:50px auto; width:500px}
+.hotspot {color:#900; padding-bottom:1px; border-bottom:1px dotted #900; cursor:pointer}
+
+#toolTip {
+    position: absolute;
+    display: block;
+    background-color: #FFFFFF;
+    padding: 7px;
+    border: 1px solid;
+}
+
+.error {
+    border-color: red !important;
+    color: red !important;
+}
+
+.info {
+    border-color: royalblue !important;
+    color: royalblue !important;
+}
+
+.default {
+    border-color: black;
+    color: black;
+}

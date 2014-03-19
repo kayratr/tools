@@ -1,0 +1,138 @@
+.jsDateInput {
+    height: 21px;
+}
+
+.jsDateInput input {
+    position: relative !important;
+    top: 0;
+    left: 0;
+    float: left;
+    padding: 0;
+    width: 85px;
+}
+
+.jsDateInput
+.jsCalendar {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 19px;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+.calendar_footer {
+    background-color: transparent;
+    text-align: center;
+    margin-left: 0px;
+}
+
+.footer_button {
+    position: relative;
+    height: 19px;
+    width: 100%;
+    border: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+
+/* input box in default state */ 
+.jsCalendar {
+	background: url('../img/javaScript_calendar/cal.gif') 100% 50% no-repeat;
+	cursor: pointer;
+}
+
+/* additional properties for input boxe in activated state, above still applies unless in conflict */
+.openCalendar {
+	background-image: url('../img/javaScript_calendar/no_cal.gif');
+}
+/* container of calendar's pop-up */
+#jsCalendar {
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	width: 170px;
+	background-color: white;
+	margin-top: 2px;
+	padding: 0 2px 2px 2px;
+	border: 1px solid silver;
+
+	-moz-box-shadow: 3px 3px 4px silver;
+	-webkit-box-shadow: 3px 3px 4px silver;
+	box-shadow: 3px 3px 4px silver;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='silver')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='silver');
+}
+
+/* table containing navigation and current month */
+#jsCalendarControls {
+	border-collapse: collapse;
+	border: 0;
+	width: 100%;
+}
+#jsCalendarControls td {
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	width: 16px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#jsCalendarControls th {
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	line-height: 25px;
+	font-size: 10px;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+}
+#jsCalendarPrevYear { background-image: url('../img/javaScript_calendar/prev_year.gif'); }
+#jsCalendarPrevMonth { background-image: url('../img/javaScript_calendar/prev_mon.gif'); }
+#jsCalendarNextMonth { background-image: url('../img/javaScript_calendar/next_mon.gif'); }
+#jsCalendarNextYear { background-image: url('../img/javaScript_calendar/next_year.gif'); }
+
+/* table containing week days header and calendar grid */
+#jsCalendarGrid {
+	border-collapse: collapse;
+	border: 1px solid silver;
+	width: 100%;
+}
+#jsCalendarGrid th {
+	border: 1px solid silver;
+	border-collapse: collapse;
+	padding: 3px 0;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	background-color: gray;
+	color: white;
+}
+#jsCalendarGrid td {
+	border: 0;
+	border-collapse: collapse;
+	padding: 2px 0;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	width: 14%;
+	font-size: 11px;
+	cursor: pointer;
+}		
+#jsCalendarGrid td.jsCalendarOtherMonth { color: silver; }
+#jsCalendarGrid td.jsCalendarWeekend { background-color: #ACD6F5; }
+#jsCalendarGrid td.jsCalendarToday { border: 1px solid red; }
+#jsCalendarGrid td.jsCalendarSelected { background-color: #FFB3BE; }
+
+.buttonR {
+    margin: 0;
+}
+
