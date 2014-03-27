@@ -295,7 +295,7 @@ function getLocaleFromCookie() {
     var nameEQ = 'lang=';
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
+        var content = ca[i];
         while (content.charAt(0) == ' ') {
             content = content.substring(1, content.length);
         }
