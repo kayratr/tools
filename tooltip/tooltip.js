@@ -78,8 +78,10 @@ var tooltip=function(){
             }
         },
         hide:function(){
-            clearInterval(toolTipDiv.timer);
-            toolTipDiv.timer = setInterval(function(){tooltip.fade(-1)},timer);
+            if (toolTipDiv != null) {
+                clearInterval(toolTipDiv.timer);
+                toolTipDiv.timer = setInterval(function(){tooltip.fade(-1)},timer);
+            }
         }
     };
 }();
@@ -90,11 +92,12 @@ function TooltipInit () {
     var css = '#toolTip{position:absolute;display:block;background-color:#FFF;padding:7px;border:1px solid}.error{border-color:red!important;color:red!important}.info{border-color:#4169e1!important;color:#4169e1!important}.default{border-color:#000;color:#000}';
     var head = document.head || document.getElementsByTagName('head')[0];
     var style = document.createElement('style');
-
     style.type = 'text/css';
     if (style.styleSheet) style.styleSheet.cssText = css;
     else style.appendChild(document.createTextNode(css));
     head.appendChild(style);
+
+
 }
 
 function Tip (s_text) {

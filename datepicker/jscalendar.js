@@ -1,31 +1,31 @@
 /*
-The MIT License (MIT)
+ The MIT License (MIT)
 
-Copyright (c) 2014 Kairat Rakhimov
+ Copyright (c) 2014 Kairat Rakhimov
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
 
-script based on:
-	Tigra Calendar v5.2 (11/20/2011)
-	http://www.softcomplex.com/products/tigra_calendar/
-	License: Public Domain... You're welcome.
-*/
+ script based on:
+ Tigra Calendar v5.2 (11/20/2011)
+ http://www.softcomplex.com/products/tigra_calendar/
+ License: Public Domain... You're welcome.
+ */
 
 var s_activeDateInputID;
 
@@ -40,7 +40,7 @@ var TCAL_LNG_RU = {
     'buttontoday': 'Сегодня'
 };
 var TCAL_LNG_KZ  = {
-    'months'     : ['\u049B\u0430\u04A3\u0442\u0430\u0440', '\u0430\u049B\u043F\u0430\u043D', '\u043D\u0430\u0443\u0440\u044B\u0437', '\u0441\u04D9\u0443\u0456\u0440', '\u043C\u0430\u043C\u044B\u0440', '\u043C\u0430\u0443\u0441\u044B\u043C', '\u0448\u0456\u043B\u0434\u0435', '\u0442\u0430\u043C\u044B\u0437', '\u049B\u044B\u0440\u043A\u04AF\u0439\u0435\u043A', '\u049B\u0430\u0437\u0430\u043D', '\u049B\u0430\u0440\u0430\u0448\u0430', '\u0436\u0435\u043B\u0442\u043E\u049B\u0441\u0430\u043D'],
+    'months'     : ['\u049A\u0430\u04A3\u0442\u0430\u0440', '\u0410\u049B\u043F\u0430\u043D', '\u041D\u0430\u0443\u0440\u044B\u0437', '\u0421\u04D9\u0443\u0456\u0440', '\u041C\u0430\u043C\u044B\u0440', '\u041C\u0430\u0443\u0441\u044B\u043C', '\u0428\u0456\u043B\u0434\u0435', '\u0422\u0430\u043C\u044B\u0437', '\u049A\u044B\u0440\u043A\u04AF\u0439\u0435\u043A', '\u049A\u0430\u0437\u0430\u043D', '\u049A\u0430\u0440\u0430\u0448\u0430', '\u0416\u0435\u043B\u0442\u043E\u049B\u0441\u0430\u043D'],
     'weekdays'   : ['\u0416\u043A', '\u0414\u0441', '\u0421\u0441', '\u0421\u0440', '\u0411\u0441', '\u0416\u043C', '\u0421\u043D'],
     'longwdays'  : ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
     'prevyear'   : '\u0411\u04B1\u0440\u044B\u043D\u0493\u044B \u0436\u044B\u043B',
@@ -129,7 +129,7 @@ function f_getCalendarHTML (d_date, e_input) {
         s_html +='</tr>';
     }
     s_html +='</tbody></table>';
-    s_html +='<div class="calendar_footer"><div class="buttonR" style="width: 100%;"><div><div> <input type="button" class="footer_button" value="'+TCAL_LNG.buttontoday+'" onclick="f_tcalUpdate(new Date().getTime())"></div></div></div></div>';
+    s_html +='<div class="calendar_footer"><div class="buttonR" style="width: 100%;margin:0"><div><div> <input type="button" class="footer_button" value="'+TCAL_LNG.buttontoday+'" onclick="f_tcalUpdate(new Date().getTime())"></div></div></div></div>';
 
     return s_html;
 }
@@ -140,8 +140,8 @@ function f_closeAllCalendars () {
 }
 
 /* Calendar day or control OnClick action.
-   n_date: selected date as number
-   b_keepOpen: if true will update calendar HTML, called by controls.*/
+ n_date: selected date as number
+ b_keepOpen: if true will update calendar HTML, called by controls.*/
 function f_tcalUpdate (n_selectedDate, b_keepOpen) {
     var e_activeInput = document.getElementById(s_activeDateInputID);
     if (!e_activeInput) return;
@@ -193,10 +193,11 @@ function f_tcalInit () {
     window.A_TCALTOKENS_IDX = {};
     for (i = 0; i < A_TCALTOKENS.length; i++)
         A_TCALTOKENS_IDX[A_TCALTOKENS[i]['t']] = A_TCALTOKENS[i];
-		
-	$(document).mouseup(function (e) {
-    var container = $("#"+TCAL_CONFIG.cssprefix);
-    if (container.has(e.target).length === 0) f_closeAllCalendars();
+
+    $(document).mouseup(function (e) {
+        var b_clickOnCalendar = $("#" + TCAL_CONFIG.cssprefix).has(e.target).length !== 0;
+        var b_clickOnCalendarIcon = $(e.target).hasClass(TCAL_CONFIG.cssprefix);
+        if (!b_clickOnCalendar && !b_clickOnCalendarIcon) f_closeAllCalendars();
     });
 }
 
